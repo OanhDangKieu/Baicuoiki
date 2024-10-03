@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quản lí bài viết </title>
+	<!-- Font Awesome-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <!-- Header -->
+        <!-- Require file header -->
+
+	<!-- PHẦN NỘI DUNG CHÍNH CỦA THÊM SP-->
+	<div class="content">
+      <div class="container">
+        <h1 class="hit-the-floor">Thêm/Sửa bài viết</h1>
+        <div class="row">
+          <form method="post" id="myForm">
+              <div class="form-group form-group-sm">
+                <label for="category_id">Chọn danh mục bài viết</label>
+                    <select class="form-control input-sm" name ="category_id" >
+                    <option>-- Lựa chọn danh mục --</option>
+                    </select>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="user_id">Tác giả bài viết</label>
+                  <select class="form-control input-sm" name="user_id">
+                    <option>-- Lựa chọn tác giả --</option>
+                  </select>
+              </div>
+                <div class="form-group form-group-sm">
+                    <label for="title">Tiêu đề bài viết</label>
+                    <input type="text" name="id" value="" hidden="true">
+                    <input required="true" type="text" class="form-control input-sm" id="title" name="title" value="">
+                </div>
+                <div class="form-group form-group-sm">
+                    <label for="content"> Nội dung bài viết</label>
+                    <textarea required="true" class="form-control input-sm" rows="5" name="content" id="content"></textarea>
+                </div>
+
+                <div class="form-group form-group-sm">
+                    <label for="image"> Hình ảnh bài viết</label>
+                    <input required="true" type="text" class="form-control input-sm"  name="image" value="" >
+                </div>
+                <div class="form-group form-group-sm">
+                    <label for="created_at"> Ngày cập nhật</label>
+                    <input type="datetime-local" name="created_at" id="created_at" required="true" class="form-control input-sm" value="">              
+                </div>
+                <button type="reset" class="btn btn-warning btn-sm " style="float: left; margin-right: 10px; margin-top: 10px;">Đặt lại</button>
+                <!-- Nút Lưu -->
+                <div class="btnForm" style="margin-top:10px">
+                    <a href=""><button type="button" class="btn btn-secondary"style="width: 200px">Quay lại danh sách</button></a>
+                    <input type="hidden" name="id" value="">
+                    <button class="btn btn-success" type="submit">Lưu</button>
+                </div>
+              </form>         
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+	document.getElementById("myForm").reset();
+</script>

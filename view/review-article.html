@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+    <script src="https://kit.fontawesome.com/41e46c9144.js" crossorigin="anonymous"></script>
+    <title>Prodviews</title>
+    <link rel="stylesheet" href="/css/review-article.css">
+    <link rel="stylesheet" href="/css/header.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="" aria-label="logo" title="logo">
+                    <img src="/logo.png" alt="logo" width="180" height="80">
+                </a>
+            </div>
+        
+            <div class="search">
+                <div class="search-form">
+                    <form action="" method="GET">
+                        <input type="text" name="keysearch" placeholder="Tìm kiếm" value="">
+                        <button type="submit" aria-label="Search" class="search" name ="btn-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="search-suggest" id="suggest_search"></div>
+            </div>
+
+            <div class="checkin" style="margin-right: 140px; ">
+                <div class="auth-login dropdown">
+                    <i class="fa-regular fa-user"></i>
+                    <a class="dropbtn" href="" data-hover="dropdown" title="user" style="padding-bottom:0px">OANH NÈ</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="">Viết bài đánh giá</a></li>
+                    </ul>
+                </div>
+        
+                <div class="auth-signup">
+                    <form action="" method="post"> 
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <a href="" title="Đăng xuất">Đăng xuất</a>
+                    </form>
+                </div>
+            </div>
+
+    </header>
+    <nav class="menu">
+        <div class="container">
+            <ul class="menu-container">
+                <li class="menu-item">
+                    <i class="fa-solid fa-house" style="color: rgb(89, 196, 114);"></i>
+                    <a href="" class="menu-link" title="Trang chủ">Trang chủ</a>
+                </li>
+
+                <li class="menu-item">
+                    <i class="fa-solid fa-chart-simple" style="color: rgb(89, 196, 114)"></i>
+                    <a href="" class="menu-link"title="">Làm đẹp</a>
+                </li>
+
+                <li class="menu-item">
+                    <i class="fa-solid fa-chart-simple" style="color: rgb(89, 196, 114)"></i>
+                    <a href="" class="menu-link"title="">Gia dụng</a>
+                </li>
+
+                <li class="menu-item">
+                    <i class="fa-solid fa-chart-simple" style="color: rgb(89, 196, 114)"></i>
+                    <a href="" class="menu-link"title="">Thể thao</a>
+                </li>
+
+                <li class="menu-item">
+                    <i class="fa-solid fa-chart-simple" style="color: rgb(89, 196, 114)"></i>
+                    <a href="" class="menu-link"title="">Thời trang</a>
+                </li>
+            </ul>
+        </div>
+    </nav>  
+    <!-- FORM -->
+    <div class="form-review">
+        <h1>Viết bài đánh giá sản phẩm</h1>
+        <div class="form-group">
+        <form method="post" id="myForm">
+            <label for="title">Chọn danh mục bài viết</label>
+            <select class="form-control" name ="category_id" id = "category_id">
+                <option>-- Lựa chọn danh mục bài viết --</otion>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="user_id">Tác giả bài viết</label>
+            <input type="text" name="id" value="<?=$id?>" hidden="true" maxlength="120">
+                    <input required="true" type="text" class="form-control input-sm" id="title" name="title" value="">
+        </div>
+
+        <div class="form-group">
+            <label for="title">Tiêu đề bài viết</label>
+            <input type="text" name="id" value="" hidden="true" maxlength="120">
+                    <input required="true" type="text" class="form-control input-sm" id="title" name="title" value="">
+        </div>
+
+        <div class="form-group">
+            <label for="review">Nội dung bài viêt</label>
+            <textarea required="true" class="form-control input-sm" rows="5" name="content" id="content" minlength="100"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="photos">Ảnh</label>
+            <input required="true" type="text" class="form-control input-sm" id="image" name="image" value="" >
+        </div>
+
+        <div class="form-group">
+            <label style="font-weight:400; text-align: justify; font-size: 15px;"><input type="checkbox" required>
+                Tôi chứng nhận rằng đánh giá này được dựa trên trải nghiệm riêng của tôi và là ý kiến chân thực của tôi về cơ sở này và rằng tôi không có mối quan hệ cá nhân hay công việc nào với cơ sở này và không được cơ sở này tặng bất kỳ khoản khuyến khích hay thanh toán nào để viết đánh giá này. 
+                Tôi hiểu rằng Prodviews có chính sách không khoan nhượng đối với đánh giá giả mạo.
+            </label>
+        </div>
+        
+        <button  id="saveButton" name="create">Gửi đánh giá</button></a>
+            </form>
+    </div>
+<!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top row">
+                <div class="footer-top__logo col-3">
+                    <a href="home.php" title="logo">
+                        <img src="/logo.png" alt="logo footer" width="180" height="80">
+                    </a>
+                </div>
+                <div class="footer-top__intro col-6">
+                    <p class="footer-top__title">Về chúng tôi</p>
+                    <div class="footer-top__intro__desc">
+                        <p>Prodviews là một trang Web truyền thông chuyên xuất bản các các bài đánh giá, tin tức, bài báo, blog và video về mỹ phẩm, công nghệ và coupon tại Việt Nam. Chúng tôi kiểm tra và xem xét sản phẩm một cách độc lập để giúp bạn tiết kiệm thời gian và loại bỏ căng thẳng khi mua sắm.</p>
+                        <p>Đơn vị chủ quản: Đại học Thương mại </p>
+                    </div>
+                    <p class="footer-top__intro__desc">Địa chỉ: 79 Hồ Tùng Mậu, Mai Dịch, Cầu Giấy, Hà Nội</p>
+                    <p class="footer-top__intro__desc">Email: <span class="text-green">support@prodviews.com</span></p>
+                    <p class="footer-top__intro__desc">Hotline: <span class="text-green">0396.202.171</span></p>
+                </div>
+                <div class="  my-auto col-3">
+                    <div class="en-three">
+                        <div class="icon text-end">
+                            <a href="#">
+                                <i class="fa-brands fa-square-twitter"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-brands fa-square-instagram"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-brands fa-discord"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-brands fa-square-reddit"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-brands fa-square-youtube"></i>
+                            </a>
+                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.899650205535!2d105.77244857503167!3d21.036700880614685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b6163c392f%3A0x1ebf64facbb56d03!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBUaMawxqFuZyBt4bqhaQ!5e0!3m2!1svi!2s!4v1714102988144!5m2!1svi!2s"  style="border:0;width:400px; height:200px" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> 
+<script>
+    // Lấy checkbox và nút Lưu
+    var agreementCheckbox = document.getElementById('agreementCheckbox');
+    var saveButton = document.getElementById('saveButton');
+
+    // Gán sự kiện onchange cho checkbox
+    agreementCheckbox.addEventListener('change', function() {
+        // Kiểm tra trạng thái của checkbox
+        if (agreementCheckbox.checked) {
+            // Nếu checkbox được tích chọn, cho phép nhấn nút Lưu
+            saveButton.disabled = false;
+        } else {
+            // Nếu checkbox không được tích chọn, vô hiệu hóa nút Lưu
+            saveButton.disabled = true;
+        }
+    });
+</script>
+</body>
+</html>
